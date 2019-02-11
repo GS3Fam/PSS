@@ -1,0 +1,46 @@
+Users
+-firstName			- String
+-lastName				- String
+-email					- String
+-password				- String
+-picture				- String
+
+Albums
+-owner					- ObjectID(ref-users)
+-name				   	- String
+-created    		- Date
+-privacy				- String
+
+Pictures
+-owner					- ObjectID(ref-users)
+-album					- ObjectID(ref-albums)
+-name				   	- String
+-filename				- String
+-created    		- Date
+-privacy				- String
+
+Comments
+-picture				- ObjectID(ref-pictures)
+-user			  		- ObjectID(ref-users)
+-comment				- String
+-created		  	- Date
+
+PhotoReqs
+-user				   	- ObjectID(ref-users)
+-picture				- ObjectID(ref-pictures)
+-created    		- Date
+-highRes				- String : Disabled, Enabled, Uploaded
+-highResFile		- String
+-slotExpire			- Date
+
+FriendReqs
+-receiver				- ObjectID(ref-users)
+-sender					- ObjectID(ref-users)
+-status         - String: Requested, Declined, Accepted
+-created    		- Date
+
+SharedPhotos
+-user				   	- ObjectID(ref-users)
+-picture				- ObjectID(ref-pictures)
+-shareStatus		- Boolean
+-created    		- Date

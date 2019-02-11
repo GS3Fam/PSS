@@ -3,6 +3,7 @@ let
   FriendReqSchema = mongoose.Schema({
     receiver: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
     sender: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
+    status: String,
     created: { type: Date, default: Date.now }
   })
 

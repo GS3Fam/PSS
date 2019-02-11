@@ -4,7 +4,8 @@
   "description": "Photo Sharing Site",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www -L"
+    "test": "concurrently \"node-sass -o public/stylesheets public/stylesheets/custom.scss\" \"nodemon ./bin/www -L\"",
+    "start": "node ./bin/www -L"
   },
   "repository": {
     "type": "git",
@@ -33,5 +34,10 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10"
   }
 }

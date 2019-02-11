@@ -5,8 +5,7 @@ let
     lastName: String,
     email: String,
     password: String,
-    picture: String,
-    friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Users' }]
+    picture: String
   })
 
 let model = module.exports = mongoose.model('Users', UserSchema, 'Users');
